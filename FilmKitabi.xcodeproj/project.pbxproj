@@ -11,6 +11,8 @@
 		D6F351E42BA4910E004E9698 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F351E32BA4910E004E9698 /* ContentView.swift */; };
 		D6F351E62BA49110004E9698 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6F351E52BA49110004E9698 /* Assets.xcassets */; };
 		D6F351E92BA49110004E9698 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6F351E82BA49110004E9698 /* Preview Assets.xcassets */; };
+		D6F351F42BA4919F004E9698 /* FilmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F351F32BA4919F004E9698 /* FilmModel.swift */; };
+		D6F351F72BA4946D004E9698 /* DownloaderClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F351F62BA4946D004E9698 /* DownloaderClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		D6F351E32BA4910E004E9698 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D6F351E52BA49110004E9698 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D6F351E82BA49110004E9698 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D6F351F32BA4919F004E9698 /* FilmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmModel.swift; sourceTree = "<group>"; };
+		D6F351F62BA4946D004E9698 /* DownloaderClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloaderClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +55,11 @@
 		D6F351E02BA4910E004E9698 /* FilmKitabi */ = {
 			isa = PBXGroup;
 			children = (
-				D6F351E12BA4910E004E9698 /* FilmKitabiApp.swift */,
-				D6F351E32BA4910E004E9698 /* ContentView.swift */,
+				D6F351F52BA49409004E9698 /* Services */,
+				D6F351F22BA49174004E9698 /* App */,
+				D6F351F12BA4916F004E9698 /* View */,
+				D6F351F02BA49167004E9698 /* ViewModel */,
+				D6F351EF2BA49145004E9698 /* Model */,
 				D6F351E52BA49110004E9698 /* Assets.xcassets */,
 				D6F351E72BA49110004E9698 /* Preview Content */,
 			);
@@ -65,6 +72,45 @@
 				D6F351E82BA49110004E9698 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D6F351EF2BA49145004E9698 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D6F351F32BA4919F004E9698 /* FilmModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D6F351F02BA49167004E9698 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D6F351F12BA4916F004E9698 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D6F351E32BA4910E004E9698 /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D6F351F22BA49174004E9698 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				D6F351E12BA4910E004E9698 /* FilmKitabiApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		D6F351F52BA49409004E9698 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D6F351F62BA4946D004E9698 /* DownloaderClient.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +184,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6F351E42BA4910E004E9698 /* ContentView.swift in Sources */,
+				D6F351F42BA4919F004E9698 /* FilmModel.swift in Sources */,
 				D6F351E22BA4910E004E9698 /* FilmKitabiApp.swift in Sources */,
+				D6F351F72BA4946D004E9698 /* DownloaderClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
