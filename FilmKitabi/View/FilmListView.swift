@@ -9,23 +9,36 @@ import SwiftUI
 
 struct FilmListView: View {
     @ObservedObject var filmListViewModel : FilmListViewModel
+    @State var aranacakFilm = ""
     
     init() {
         self.filmListViewModel = FilmListViewModel()
-        self.filmListViewModel.filmAramasiYap(filmIsmi: "titanic")
     }
     
     var body: some View {
-        List(filmListViewModel.filmler, id: \.imdbID) { film in
-            HStack {
-                Image(systemName: "arrow.down")
-                VStack(alignment: .leading) {
-                    Text(film.title)
-                        .font(.title)
-                        .fontWeight(.bold)
-                    Text(film.year)
-                        .foregroundStyle(.green)
+        NavigationView {
+            VStack {
+                TextField("Aranacak Film", text: $aranacakFilm, onEditingChanged: { _ in }, onCommit: {
+                    self.filmListViewModel.filmAramasiYap(filmIsmi: aranacakFilm)
+                })
+                .padding(.horizontal)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                List(filmListViewModel.filmler, id: \.imdbID) { film in
+                    HStack {
+                        OzelImage(url: film.poster)
+                            .frame(width: 90, height: 120)
+                            .padding()
+                        VStack(alignment: .leading) {
+                            Text(film.title)
+                                .font(.title)
+                                .fontWeight(.bold)
+                            Text(film.year)
+                                .font(.title3)
+                                .foregroundStyle(.green)
+                        }
+                    }
                 }
+                .navigationTitle(Text("Film Kitabı"))
             }
         }
     }
