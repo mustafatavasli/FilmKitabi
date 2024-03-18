@@ -19,7 +19,8 @@ struct FilmListView: View {
         NavigationView {
             VStack {
                 TextField("Aranacak Film", text: $aranacakFilm, onEditingChanged: { _ in }, onCommit: {
-                    self.filmListViewModel.filmAramasiYap(filmIsmi: aranacakFilm)
+                    self.filmListViewModel.filmAramasiYap(filmIsmi: aranacakFilm.trimmingCharacters(in: .whitespacesAndNewlines).addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? aranacakFilm)
+                    // White Space sorununun çözümü URL dönüşümüyle yapıldı.
                 })
                 .padding(.horizontal)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
