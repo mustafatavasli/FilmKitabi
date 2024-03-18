@@ -16,10 +16,12 @@ class FilmDetailViewModel : ObservableObject {
     func filmDetayiAl(imdbID : String) {
         downloaderClient.filmDetayiniIndir(imdbID: imdbID) { (sonuc) in
             switch sonuc {
-            case .failure(let hata) :
+            case .failure(let hata):
                 print(hata)
-            case .success(let filmDetay) :
-                self.filmDetayi = FilmDetaylari(detay: filmDetay)
+            case .success(let filmDetay):
+                DispatchQueue.main.async {
+                    self.filmDetayi = FilmDetaylari(detay: filmDetay)
+                }
             }
         }
     }
